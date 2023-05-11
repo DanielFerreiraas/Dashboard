@@ -1,0 +1,28 @@
+.sidebar{
+    width: 200px;
+    background-color: rgb(228, 225, 225);
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.navigation ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li{
+    margin-bottom: 1rem;
+}
+
+.navigation li:last-child {
+    margin-bottom: 0;
+}
+.navigation a{
+    text-decoration: none;
+    color: rgb(53, 52, 52);
+}
+
+.navigation a:hover {
+    color: black;
+}

@@ -1,0 +1,58 @@
+.title{
+    text-align: center;
+}
+
+.table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td{
+    border: 1px solid rgb(73, 73, 73);
+    text-align: left;
+    padding: 8px;
+}
+
+th{
+    background-color: rgb(228, 225, 225);
+}
+
+.button{
+    background-color: rgb(14, 14, 231);
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    width: 100px;
+    transition: 500ms;
+    font-size:larger;
+    margin: 0 auto;
+    margin-inline: 5px;
+}
+
+.button:hover{
+    background-color: rgb(11, 11, 172);
+}
+
+.buttonDelete{
+    background-color: rgb(243, 18, 18);
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    width: 100px;
+    transition: 500ms;
+    font-size:larger;
+    margin: 0 auto;
+}
+
+.buttonDelete:hover{
+    background-color: rgb(221, 2, 2);
+}
+
+.buttonGroup{
+   text-align: center;
+}

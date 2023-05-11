@@ -1,0 +1,11 @@
+.header{
+    background-color: rgb(58, 56, 56);
+    display: flex;
+    color: white;
+    padding: 20px;
+}
+
+.logo{
+    align-items: center;
+    margin: auto;
+}
