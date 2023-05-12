@@ -1,20 +1,16 @@
 import React from "react";
 
 import * as Yup from 'yup';
-
 import { useLocation, useNavigate } from "react-router-dom";
-
-import styles from './CadastrarPortfolio.module.css';
 
 import { Title } from "../../../components/common/Title";
 import { Button } from "../../../components/common/Button";
-
 import { Input } from "../../../components/forms/Input";
-
-import { Portfolios, createOrUpdatePortfolio } from "../../../services/portfoliosServices";
 import { Form } from "../../../components/forms/Form";
 
+import { Portfolios, createOrUpdatePortfolio } from "../../../services/portfoliosServices";
 
+import styles from './CadastrarPortfolio.module.css';
 
 const CadastrarPortfolio: React.FC = () => {
 
@@ -63,7 +59,13 @@ const CadastrarPortfolio: React.FC = () => {
             {({ errors, touched }) => ( 
                 <div className={styles.form}>
 
-                    <Title>Cadastrar portfólios</Title>
+                    {
+                        !portfolio ?
+                        <Title>Cadastrar portfólio</Title>
+                        :
+                        <Title>Atualizar Portifólio</Title>
+                    }
+
 
                     <Input
                         label="Título"

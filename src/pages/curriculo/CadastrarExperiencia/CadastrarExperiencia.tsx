@@ -4,16 +4,15 @@ import * as Yup from 'yup';
 import { Formik, Form } from 'formik';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { Experiencias, updateOrCreateExperiencia } from '../../../services/experienciasServices';
-
 import { Title } from '../../../components/common/Title';
+import { Button } from '../../../components/common/Button';
 
 import { Input } from '../../../components/forms/Input';
-import { Button } from '../../../components/common/Button';
 import { Select } from '../../../components/forms/Select';
 
-import styles from './CadastrarExperiencia.module.css';
+import { Experiencias, updateOrCreateExperiencia } from '../../../services/experienciasServices';
 
+import styles from './CadastrarExperiencia.module.css';
 
 
 const CadastrarExperiencia: React.FC = () => {
@@ -28,7 +27,8 @@ const CadastrarExperiencia: React.FC = () => {
         tipo: '',
         anoInicio: '',
         anoFim: '',
-    }
+
+    };
 
     const validationSchema = Yup.object().shape({
 
@@ -42,13 +42,12 @@ const CadastrarExperiencia: React.FC = () => {
     const onSubmit = async (values: Experiencias, { resetForm }: { resetForm: () => void }) => {
         try {
             await updateOrCreateExperiencia(values);
-            console.log(values);
             resetForm();
-            navigate('/curriculo/experiencia/listagem')
+            navigate('/curriculo/experiencia/listagem');
             alert('Formulário enviado com sucesso!');
         } catch (error) {
-            console.log('Erro de não foi possível criar, tente novamente.', error)
-            alert('Não foi possível enviar o formulário.')
+            console.log('Erro de não foi possível criar, tente novamente.', error);
+            alert('Não foi possível enviar o formulário.');
         }
 
     };
@@ -91,6 +90,7 @@ const CadastrarExperiencia: React.FC = () => {
                         <Input
                             label="Ano de Inicio"
                             name="anoInicio"
+                            type="number"
                             errors={errors.anoInicio}
                             touched={touched.anoInicio}
                         />
@@ -98,6 +98,7 @@ const CadastrarExperiencia: React.FC = () => {
                         <Input
                             label="Ano de Fim"
                             name="anoFim"
+                            type="number"
                             errors={errors.anoFim}
                             touched={touched.anoFim}
                         />

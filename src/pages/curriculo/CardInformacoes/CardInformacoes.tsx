@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "./CardInformacoes.module.css";
 
 import { Informacoes } from "../../../services/informacoesServices";
+
+import styles from "./CardInformacoes.module.css";
 
 interface InformacoesCardProps {
     informacoes: Informacoes;

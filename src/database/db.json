@@ -16,39 +16,12 @@
   ],
   "experiencias": [
     {
-      "id": 1,
       "titulo": "Desenvolvedor de Software",
-      "tipo": "Academica",
-      "anoInicio": "2020",
-      "anoFim": "2023"
-    },
-    {
-      "id": 2,
-      "titulo": "tttttt",
       "tipo": "Profissional",
-      "anoInicio": "2024",
-      "anoFim": "2028"
-    },
-    {
-      "id": 3,
-      "titulo": "Desenvolvedor de Software",
-      "tipo": "Academica",
-      "anoInicio": "2010",
-      "anoFim": "2023"
+      "anoInicio": 2024,
+      "anoFim": 2013,
+      "id": 1
     }
   ],
-  "portfolios": [
-    {
-      "id": 3,
-      "titulo": "Projeto 1",
-      "imagem": "https://github.com/DanielFerreiraas.png",
-      "link": "auauaua"
-    },
-    {
-      "id": 4,
-      "titulo": "Analista de sistemas",
-      "imagem": "https://github.com/DanielFerreiraas.png",
-      "link": "jbxqouxnpie"
-    }
-  ]
+  "portfolios": []
 }

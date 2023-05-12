@@ -2,10 +2,9 @@ import React from 'react';
 
 import { NavLink } from 'react-router-dom';
 
-import { FaBeer } from 'react-icons/fa';
+import { useAuth } from '../../../contexts/authContext';
 
 import styles from './Siderbar.module.css';
-import { useAuth } from '../../../contexts/authContext';
 
 const Sidebar: React.FC = () => {
 
@@ -56,7 +55,7 @@ const Sidebar: React.FC = () => {
                     <ul>
                 <li>
                     <NavLink onClick={logout} to='/login' className={styles.active}>
-                        <FaBeer></FaBeer>
+                        <h3>Sair</h3>
                     </NavLink>
                 </li>
             </ul>   

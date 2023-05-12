@@ -2,17 +2,16 @@ import React, { useEffect, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
-import styles from './ListagemExperiencia.module.css';
+import { Title } from '../../../components/common/Title';
 
 import { Experiencias, deleteExperiencia, getExperiencia } from '../../../services/experienciasServices';
 
-import { Title } from '../../../components/common/Title';
+import styles from './ListagemExperiencia.module.css';
 
 
 const ListagemExperiencia: React.FC = () => {
 
     const navigate = useNavigate();
-
     const[experiencias, setExperiencias] = useState<Experiencias[]>([]);
 
     const fetchExperiencias = async () => {
@@ -29,18 +28,26 @@ const ListagemExperiencia: React.FC = () => {
         fetchExperiencias()
     }, []);
 
-    const handleEdit = (experiencias: Experiencias) => {
-        navigate('/curriculo/experiencia/cadastro', {state: experiencias})
+    const handleEdit = (experiencia: Experiencias) => {
+        try{
+            if(confirm('Você deseja realmente editar esse produto?'))
+                navigate('/curriculo/experiencia/cadastro', {state: experiencia})
+        }catch{
+
+        }
+            
     }
     
-    const handleDelete = async (experiencias: Experiencias) => {
+    const handleDelete = async (experiencia: Experiencias) => {
         try {
-            await deleteExperiencia(experiencias.id);
-            fetchExperiencias();
-            alert('Deletado com sucesso!')
+            if(confirm('Você deseja realmente deletar as experiências?')){
+                await deleteExperiencia(experiencia.id);
+                fetchExperiencias();
+                alert('Os dados foram deletados com sucesso!');
+            }
         } catch (error) {
-            console.log('Erro ao deletar', error)
-            alert('Erro ao deletar tente novamente.')
+            console.log(error)
+            alert('Não foi possível deletar.')
         }
     }
 

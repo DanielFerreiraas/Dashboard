@@ -2,10 +2,9 @@ import React, {useEffect, useState} from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
-import styles from './PortfolioListagem.module.css';
-
 import { Portfolios, deletePortfolio, getPortfolio } from '../../../services/portfoliosServices';
 
+import styles from './PortfolioListagem.module.css';
 
 const PortfolioListagem: React.FC = () => {
 
@@ -29,14 +28,21 @@ const PortfolioListagem: React.FC = () => {
 
     
     const handleEdit = (portfolios:Portfolios) => {
-        navigate('/portfolio/cadastro',{state: portfolios});
+        try{
+            if(confirm('Você deseja realmente editar esse produto?'))
+            navigate('/portfolio/cadastro',{state: portfolios});
+        }catch{
+
+        }
     }
 
-    const handleDelete = async (index:number) => {
+    const handleDelete = async (portfolios: Portfolios) => {
         try {
-            await deletePortfolio(index)
-            fetchPortfolios();
-            alert('Os dados foram deletados com sucesso!')
+            if(confirm('Você deseja realmente deletar esse projeto?')){
+                await deletePortfolio(portfolios.id)
+                fetchPortfolios();
+                alert('Os dados foram deletados com sucesso!')
+            }
         } catch (error) {
             console.log(error)
             alert('Não foi possível deletar.')
@@ -63,7 +69,7 @@ const PortfolioListagem: React.FC = () => {
                         <td>{portfolio.link}</td>
                         <td className={styles.buttonGroup}>
                             <button onClick={() => handleEdit(portfolio)} className={styles.button}>Editar</button>
-                            <button onClick={() => handleDelete(index)} className={styles.buttonDelete}>Apagar</button>
+                            <button onClick={() => handleDelete(portfolio)} className={styles.buttonDelete}>Apagar</button>
                         </td>
                     </tr>
                 ))}

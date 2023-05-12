@@ -3,16 +3,16 @@ import React from "react";
 import * as Yup from 'yup';
 import { useNavigate } from "react-router-dom";
 
-import styles from './Login.module.css';
-
 import { Title } from "../../components/common/Title";
-
 import { Input } from "../../components/forms/Input";
 import { Form } from "../../components/forms/Form";
+import { Button } from "../../components/common/Button";
+
+import { useAuth } from "../../contexts/authContext";
 
 import { login as loginService } from "../../services/authServices";
-import { useAuth } from "../../contexts/authContext";
-import { Button } from "../../components/common/Button";
+
+import styles from './Login.module.css';
 
 interface LoginValues {
     email: string;

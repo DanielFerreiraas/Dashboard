@@ -4,13 +4,13 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
 import { Title } from '../../../components/common/Title';
-
+import { CardInformacoes } from '../CardInformacoes';
 import { Input } from '../../../components/forms/Input';
 import { Button } from '../../../components/common/Button';
+
 import { Informacoes, updateInformacoes, getInformacoes } from '../../../services/informacoesServices';
 
 import styles from './CadastrarInformacoes.module.css';
-import { CardInformacoes } from '../CardInformacoes';
 
 const CadastrarInformacoes: React.FC = () => {
 
@@ -58,12 +58,14 @@ const CadastrarInformacoes: React.FC = () => {
 
     const handleDelete = async () => {
         try {
+            if(confirm('Você deseja realmente deletar as informacões?')){
             await updateInformacoes(initialValues);
-            setInformacoes(initialValues)
-            alert('Informações deletadas com sucesso!!')
+            setInformacoes(initialValues);
+            alert('Informações deletadas com sucesso!!');
+            }
         } catch (error) {
-            console.error('Erro ao deletar informações, tente novamente', error)
-            alert('Erro não foi possível deletar, tente novamente.')
+            console.log(error)
+            alert('Não foi possível deletar.')
         }
     };
 

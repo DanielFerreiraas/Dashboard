@@ -2,7 +2,6 @@ import React from "react";
 
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-
 import { Layout } from '../components/layout';
 
 import { Home } from '../pages/home';
@@ -12,6 +11,7 @@ import { ListagemExperiencia } from '../pages/curriculo/ListagemExperiencia';
 
 import { CadastrarPortfolio } from '../pages/portfolio/CadastrarPortfolio';
 import { PortfolioListagem } from '../pages/portfolio/PortfolioListagem';
+
 import { useAuth } from "../contexts/authContext";
 
 
