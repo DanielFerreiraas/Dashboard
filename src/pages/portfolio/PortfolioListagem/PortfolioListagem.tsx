@@ -1,6 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
+
+import { Title } from '../../../components/common/Title';
+import { Table } from '../../../components/common/Table';
+import { Column } from '../../../components/common/Table/Table';
 
 import { Portfolios, deletePortfolio, getPortfolio } from '../../../services/portfoliosServices';
 
@@ -10,7 +14,7 @@ const PortfolioListagem: React.FC = () => {
 
     const navigate = useNavigate();
 
-    const [portfolios, setPortfolios]= React.useState<Portfolios[]>([]);
+    const [portfolios, setPortfolios] = React.useState<Portfolios[]>([]);
 
     const fetchPortfolios = async () => {
         try {
@@ -22,23 +26,23 @@ const PortfolioListagem: React.FC = () => {
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchPortfolios()
     }, []);
 
-    
-    const handleEdit = (portfolios:Portfolios) => {
-        try{
-            if(confirm('Você deseja realmente editar esse produto?'))
-            navigate('/portfolio/cadastro',{state: portfolios});
-        }catch{
+
+    const handleEdit = (portfolios: Portfolios) => {
+        try {
+            if (confirm('Você deseja realmente editar esse produto?'))
+                navigate('/portfolio/cadastro', { state: portfolios });
+        } catch {
 
         }
     }
 
     const handleDelete = async (portfolios: Portfolios) => {
         try {
-            if(confirm('Você deseja realmente deletar esse projeto?')){
+            if (confirm('Você deseja realmente deletar esse projeto?')) {
                 await deletePortfolio(portfolios.id)
                 fetchPortfolios();
                 alert('Os dados foram deletados com sucesso!')
@@ -49,32 +53,22 @@ const PortfolioListagem: React.FC = () => {
         }
     }
 
-    return(
+    const columns: Column<Portfolios>[] = [
+        { header: "titulo", acessor: "titulo" },
+        { header: "imagem", acessor: "imagem" },
+        { header: "link", acessor: "link" },
+    ]
+
+    return (
         <>
-        <h1 className={styles.title}>Lista de portfólios</h1>
-        <table className={styles.table}>
-            <thead>
-                <tr>
-                    <th>Título</th>
-                    <th>imagem</th>
-                    <th>link</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                {portfolios.map((portfolio, index)=>(
-                    <tr key={index}>
-                        <td>{portfolio.titulo}</td>
-                        <td>{portfolio.imagem}</td>
-                        <td>{portfolio.link}</td>
-                        <td className={styles.buttonGroup}>
-                            <button onClick={() => handleEdit(portfolio)} className={styles.button}>Editar</button>
-                            <button onClick={() => handleDelete(portfolio)} className={styles.buttonDelete}>Apagar</button>
-                        </td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
+            <Title>Listagem de Experiências</Title>
+
+            <Table
+                columns={columns}
+                data={portfolios}
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+            />
         </>
     )
 }

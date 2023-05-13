@@ -21,7 +21,35 @@
       "anoInicio": 2024,
       "anoFim": 2013,
       "id": 1
+    },
+    {
+      "titulo": "Programador",
+      "tipo": "Profissional",
+      "anoInicio": 2024,
+      "anoFim": 2010,
+      "id": 2
+    },
+    {
+      "titulo": "Analista de sistemas",
+      "tipo": "Academica",
+      "anoInicio": 2010,
+      "anoFim": 2028,
+      "id": 3
+    },
+    {
+      "titulo": "Desenvolvedor de Software",
+      "tipo": "Academica",
+      "anoInicio": 2010,
+      "anoFim": 2023,
+      "id": 4
     }
   ],
-  "portfolios": []
+  "portfolios": [
+    {
+      "titulo": "Desenvolvedor de Software",
+      "imagem": "https://github.com/DanielFerreiraas.png",
+      "link": "jbxqouxnpie",
+      "id": 1
+    }
+  ]
 }

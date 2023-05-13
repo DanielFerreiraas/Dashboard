@@ -33,7 +33,7 @@ export const updateExperiencia = async (experiencia:Experiencias) => {
     return response.data;
 }
 
-export async function deleteExperiencia(id: number | undefined): Promise<Experiencias> {
+export const deleteExperiencia = async (id: number | undefined): Promise<Experiencias> => {
     const response = await api.delete<Experiencias>(`/experiencias/${id}}`);
     return response.data;
 }

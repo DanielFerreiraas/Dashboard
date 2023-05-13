@@ -3,11 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Title } from '../../../components/common/Title';
+import { Column } from '../../../components/common/Table/Table';
+import { Table } from '../../../components/common/Table';
 
 import { Experiencias, deleteExperiencia, getExperiencia } from '../../../services/experienciasServices';
-
-import styles from './ListagemExperiencia.module.css';
-
 
 const ListagemExperiencia: React.FC = () => {
 
@@ -51,34 +50,23 @@ const ListagemExperiencia: React.FC = () => {
         }
     }
 
+    const columns: Column<Experiencias>[] = [
+      { header: "titulo", acessor: "titulo" },
+      { header: "tipo", acessor: "tipo" },
+      { header: "anoInicio", acessor: "anoInicio" },
+      { header: "anoFim", acessor: "anoFim" }
+    ]
+
     return (
         <>  
         <Title>Listagem de Experiências</Title>
-        <table className={styles.table}>
-            <thead>
-                <tr>
-                    <th>Titulo</th>
-                    <th>Tipo</th>
-                    <th>Ano de inicio</th>
-                    <th>Ano de Fim</th>
-                    <th>Ação</th>
-                </tr>
-            </thead>
-            <tbody>
-                {experiencias.map((experiencia, index) => (
-                    <tr key={index}>
-                        <td>{experiencia.titulo}</td>
-                        <td>{experiencia.tipo}</td>
-                        <td>{experiencia.anoInicio}</td>
-                        <td>{experiencia.anoFim}</td>
-                        <td className={styles.buttonGroup}>
-                            <button onClick={() => handleEdit(experiencia)} className={styles.button}>Editar</button>
-                            <button onClick={() => handleDelete(experiencia)} className={styles.buttonDelete}>Apagar</button>
-                        </td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
+
+        <Table
+            columns={columns}
+            data={experiencias}
+            handleEdit={handleEdit}
+            handleDelete={handleDelete}
+        />
         </>
     )
 }
