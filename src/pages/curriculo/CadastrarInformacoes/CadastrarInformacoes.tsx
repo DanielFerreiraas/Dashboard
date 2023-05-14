@@ -113,7 +113,6 @@ const CadastrarInformacoes: React.FC = () => {
 
                     {informacoes &&
                         <div className={styles.cardContainer}>
-                            {/* <img src="/daniel-img.jpg" alt="" /> */}
                             <CardInformacoes informacoes={informacoes} />
                             <Button type="button" onClick={handleDelete} red>Deletar</Button>
                         </div>
