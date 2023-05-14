@@ -61,9 +61,9 @@ const CadastrarPortfolio: React.FC = () => {
 
                     {
                         !portfolio ?
-                        <Title>Cadastrar portfólio</Title>
+                        <Title>Cadastrar portfólios</Title>
                         :
-                        <Title>Atualizar Portifólio</Title>
+                        <Title>Atualizar Portifólios</Title>
                     }
 
 

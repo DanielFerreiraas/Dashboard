@@ -8,8 +8,6 @@ import { Column } from '../../../components/common/Table/Table';
 
 import { Portfolios, deletePortfolio, getPortfolio } from '../../../services/portfoliosServices';
 
-import styles from './PortfolioListagem.module.css';
-
 const PortfolioListagem: React.FC = () => {
 
     const navigate = useNavigate();
@@ -54,14 +52,14 @@ const PortfolioListagem: React.FC = () => {
     }
 
     const columns: Column<Portfolios>[] = [
-        { header: "titulo", acessor: "titulo" },
+        { header: "título", acessor: "titulo" },
         { header: "imagem", acessor: "imagem" },
         { header: "link", acessor: "link" },
     ]
 
     return (
         <>
-            <Title>Listagem de Experiências</Title>
+            <Title>Manipular Portfólios</Title>
 
             <Table
                 columns={columns}

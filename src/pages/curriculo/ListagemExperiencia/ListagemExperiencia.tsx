@@ -51,15 +51,16 @@ const ListagemExperiencia: React.FC = () => {
     }
 
     const columns: Column<Experiencias>[] = [
-      { header: "titulo", acessor: "titulo" },
+      { header: "título", acessor: "titulo" },
+      { header: "Instituição", acessor: "instituicao" },
       { header: "tipo", acessor: "tipo" },
-      { header: "anoInicio", acessor: "anoInicio" },
-      { header: "anoFim", acessor: "anoFim" }
+      { header: "ano/Início", acessor: "anoInicio" },
+      { header: "ano/Fim", acessor: "anoFim" }
     ]
 
     return (
         <>  
-        <Title>Listagem de Experiências</Title>
+        <Title>Manipular Experiências</Title>
 
         <Table
             columns={columns}

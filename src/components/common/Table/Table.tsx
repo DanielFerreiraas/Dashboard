@@ -29,9 +29,9 @@ const Table = <T,>({ columns, data, handleEdit, handleDelete }: TableProps<T>): 
                 {data.map((item, index) => (
                     <tr key={index}>
                         {columns.map((column, columnIndex) => (
-                            column.acessor == "image" ?
+                            column.acessor == "imagem" ?
                                 <td key={columnIndex} className={styles.td}>
-                                    <img src={item[column.acessor] as string} alt="imagem" />
+                                    <img src={item[column.acessor] as string} alt="imagem" className={styles.foto}/>
                                 </td>
                                 :
                                 <td key={columnIndex} className={styles.td}>{item[column.acessor]}</td>

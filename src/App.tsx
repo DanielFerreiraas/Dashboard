@@ -8,6 +8,8 @@ import { AppRoutes } from './Routes';
 import { AuthProvider } from './contexts/authContext';
 
 
+
+
 const App: React.FC = () => {
 
   return (

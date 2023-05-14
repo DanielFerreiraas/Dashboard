@@ -1,18 +1,20 @@
 
 .table{
     border-collapse: collapse;
-    width: 100%;
-    margin-top: 20px;
+    width: 90%;
+    margin-top: 5px;
+    margin: auto;
 }
 
 th, td{
-    border: 1px solid rgb(73, 73, 73);
-    text-align: left;
-    padding: 8px;
+    border: 1px solid rgb(179, 177, 177);
+    text-align: center;
+    padding: 4px;
 }
 
 th{
-    background-color: rgb(228, 225, 225);
+    background-color: rgb(95, 95, 95);
+    color: whitesmoke;
 }
 
 .button{
@@ -26,7 +28,15 @@ th{
     transition: 500ms;
     font-size:larger;
     margin: 0 auto;
-    margin-inline: 5px;
+    margin-inline: 3px;
+}
+
+.foto{
+    width: 100px;
+    height: 10px auto;
+    margin-top: 20px;
+    margin: 20px auto 0;
+    margin: auto;
 }
 
 .button:hover{
@@ -53,3 +63,52 @@ th{
 .buttonGroup{
    text-align: center;
 }
+
+@media only screen and (max-width:1080px) {
+    .table{
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    th, td{
+        border: 1px solid rgb(179, 177, 177);
+        text-align: center;
+        padding: 0px;
+    }
+
+    .foto{
+        width: 60px;
+        height: auto;
+        margin-top: 20px;
+        margin: 20px auto 0;
+        margin: auto;
+    }
+
+    .button{
+        background-color: rgb(14, 14, 231);
+        border: none;
+        padding: 3px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+        width: 100px;
+        transition: 500ms;
+        font-size:larger;
+        margin: 0 auto;
+        margin-bottom: 5px;
+    }
+
+    .buttonDelete{
+        background-color: rgb(243, 18, 18);
+        border: none;
+        padding: 3px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+        width: 100px;
+        transition: 500ms;
+        font-size:larger;
+    }
+}
+

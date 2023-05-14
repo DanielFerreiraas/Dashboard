@@ -24,6 +24,7 @@ const CadastrarExperiencia: React.FC = () => {
     const initialValues: Experiencias = {
     
         titulo: '',
+        instituicao: '',
         tipo: '',
         anoInicio: '',
         anoFim: '',
@@ -33,6 +34,7 @@ const CadastrarExperiencia: React.FC = () => {
     const validationSchema = Yup.object().shape({
 
         titulo: Yup.string().required('Campo obrigatório'),
+        instituicao: Yup.string().required('Campo obrigatório'),
         tipo: Yup.string().required('Campo obrigatório'),
         anoInicio: Yup.number().required('Campo obrigatório').typeError('Este campo aceita apenas números!'),
         anoFim: Yup.number().required('Campo obrigatório').typeError('Este campo aceita apenas números!'),
@@ -54,7 +56,6 @@ const CadastrarExperiencia: React.FC = () => {
 
     return (
         <div className={styles.formWrapper}>
-            <h1>ola mundo</h1>
             <Formik
                 initialValues={experiencia || initialValues}
                 validationSchema={validationSchema}
@@ -64,9 +65,9 @@ const CadastrarExperiencia: React.FC = () => {
 
                         {
                             !experiencia ? 
-                            <Title>Cadastrar Experiência</Title>
+                            <Title>Cadastrar Experiências</Title>
                             :
-                            <Title>Atualizar Experiência</Title>
+                            <Title>Atualizar Experiências</Title>
                         }
 
                         <Input
@@ -76,12 +77,20 @@ const CadastrarExperiencia: React.FC = () => {
                             touched={touched.titulo}
                         />
 
+                        <Input      
+                            label="Instituição"
+                            name="instituicao"
+                            errors={errors.instituicao}
+                            touched={touched.instituicao}
+                        />
+
                         <Select
                             label="Tipo de experiência"
                             name="tipo"
                             options={[
                                 { value: "Profissional", label: "Profissional" },
-                                { value: "Academica", label: "Acadêmica" }
+                                { value: "Academica", label: "Acadêmica" },
+                                { value: "Certificacoes", label: "Certificações" }
                             ]}
                             errors={errors.tipo}
                             touched={touched.tipo}

@@ -12,6 +12,8 @@ import { Informacoes, updateInformacoes, getInformacoes } from '../../../service
 
 import styles from './CadastrarInformacoes.module.css';
 
+import fotos from '../../../assets/netbit2.png';
+
 const CadastrarInformacoes: React.FC = () => {
 
     const [informacoes, setInformacoes] = useState<Informacoes>({} as Informacoes);
@@ -80,7 +82,7 @@ const CadastrarInformacoes: React.FC = () => {
                 {({ errors, touched }) => (
                     <Form className={styles.form}>
 
-                        <Title>Cadastra Informações</Title>
+                        <Title>Cadastrar Informações</Title>
 
                         <Input
                             label="Foto"
@@ -111,6 +113,7 @@ const CadastrarInformacoes: React.FC = () => {
 
                     {informacoes &&
                         <div className={styles.cardContainer}>
+                            {/* <img src="/daniel-img.jpg" alt="" /> */}
                             <CardInformacoes informacoes={informacoes} />
                             <Button type="button" onClick={handleDelete} red>Deletar</Button>
                         </div>

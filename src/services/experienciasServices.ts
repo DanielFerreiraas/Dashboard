@@ -3,6 +3,7 @@ import api from "./api";
 export interface Experiencias{
     id?: number;
     titulo: string;
+    instituicao: string;
     tipo: string;
     anoInicio: string | '';
     anoFim: string | '';
@@ -34,7 +35,7 @@ export const updateExperiencia = async (experiencia:Experiencias) => {
 }
 
 export const deleteExperiencia = async (id: number | undefined): Promise<Experiencias> => {
-    const response = await api.delete<Experiencias>(`/experiencias/${id}}`);
+    const response = await api.delete<Experiencias>(`/experiencias/${id}`);
     return response.data;
 }
 

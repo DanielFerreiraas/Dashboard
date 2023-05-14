@@ -1,9 +1,8 @@
 .sidebar{
-    width: 200px;
+    width: 250px;
     background-color: rgb(228, 225, 225);
     box-sizing: border-box;
     padding: 1rem;
-    
 }
 
 .navigation ul{
@@ -19,11 +18,17 @@
 .navigation li:last-child {
     margin-bottom: 0;
 }
+
 .navigation a{
     text-decoration: none;
     color: rgb(53, 52, 52);
 }
 
-.navigation a:hover {
-    color: black;
+.sidebar .navigation .rows :hover {
+    background-color: rgb(95, 95, 95);
+    width: 100%;
+    padding: 8px;
+    transition: 0.10s;
+    cursor: pointer;
+    color: white;
 }
