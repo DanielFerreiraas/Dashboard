@@ -27,7 +27,7 @@ const CadastrarExperiencia: React.FC = () => {
         instituicao: '',
         tipo: '',
         anoInicio: '',
-        anoFim: '',
+        anoFim: '/',
 
     };
 
@@ -36,7 +36,7 @@ const CadastrarExperiencia: React.FC = () => {
         titulo: Yup.string().required('Campo obrigatório'),
         instituicao: Yup.string().required('Campo obrigatório'),
         tipo: Yup.string().required('Campo obrigatório'),
-        anoInicio: Yup.string().required('Campo obrigatório').typeError('Este campo aceita apenas números!')
+        anoInicio: Yup.number().required('Campo obrigatório').typeError('Este campo aceita apenas números!')
 
     });
 
