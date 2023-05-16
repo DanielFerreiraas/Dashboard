@@ -27,7 +27,7 @@ const CadastrarExperiencia: React.FC = () => {
         instituicao: '',
         tipo: '',
         anoInicio: '',
-        anoFim: '/',
+        anoFim: '',
 
     };
 
