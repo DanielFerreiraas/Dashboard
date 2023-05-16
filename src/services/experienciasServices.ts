@@ -6,7 +6,7 @@ export interface Experiencias{
     instituicao: string;
     tipo: string;
     anoInicio: string | '';
-    anoFim: string | '';
+    anoFim?: string | '';
 }
 
 export const createExperiencia = async (experiencia:Experiencias): Promise<Experiencias> => {
