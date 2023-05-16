@@ -18,7 +18,7 @@ export const getPortfolio = async():Promise<Portfolios[]> =>{
 }
 
 export const updatePortfolio = async (portfolios: Portfolios) => {
-    const response = await api.put(`/portfolios/${portfolios.id}`, portfolios);
+    const response = await api.put(`/Portfolios/${portfolios.id}`, portfolios);
     return response.data;
 }
 

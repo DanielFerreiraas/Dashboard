@@ -32,7 +32,7 @@ const PortfolioListagem: React.FC = () => {
     const handleEdit = (portfolios: Portfolios) => {
         try {
             if (confirm('Você deseja realmente editar esse produto?'))
-                navigate('/portfolio/cadastro', { state: portfolios });
+                navigate('/Portfolio/cadastro', { state: portfolios });
         } catch {
 
         }
