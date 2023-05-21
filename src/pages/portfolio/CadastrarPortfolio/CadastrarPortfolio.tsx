@@ -61,11 +61,10 @@ const CadastrarPortfolio: React.FC = () => {
 
                     {
                         !portfolio ?
-                        <Title>Cadastrar portfólios</Title>
+                        <Title>Cadastrar portfólio</Title>
                         :
-                        <Title>Atualizar Portifólios</Title>
+                        <Title>Atualizar Portifólio</Title>
                     }
-
 
                     <Input
                         label="Título"

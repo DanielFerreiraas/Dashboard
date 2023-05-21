@@ -42,7 +42,6 @@ const Login:React.FC = () => {
             const user = await loginService(values.email, values.password)
             login(user)
             navigate('/')
-            console.log(values)
         } catch (error) {
             console.log('Erro de não foi possível criar, tente novamente.', error)
             alert('Não foi possível enviar o formulário.')
