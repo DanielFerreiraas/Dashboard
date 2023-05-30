@@ -1,11 +1,12 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-import { User } from "../services/userServices";
+import { User } from "../services/authServices";
 
 interface authContextProps {
     authenticated: boolean;
     user: User;
-    login: (user: User) => void;
+    login: (user: User) => void
+;
     logout: () => void;
     isLoading: boolean;
 }

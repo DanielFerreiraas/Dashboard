@@ -39,7 +39,7 @@ const Login:React.FC = () => {
 
     const onSubmit = async (values: LoginValues) => {
         try {
-            const user = await(values.email, values.password)
+            const user = await loginService(values);
             login(user)
             navigate('/')
         } catch (error) {
