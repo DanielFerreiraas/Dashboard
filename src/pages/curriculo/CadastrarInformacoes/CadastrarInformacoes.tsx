@@ -8,7 +8,7 @@ import { CardInformacoes } from '../CardInformacoes';
 import { Input } from '../../../components/forms/Input';
 import { Button } from '../../../components/common/Button';
 
-import { Informacoes, updateInformacoes, getInformacoes } from '../../../services/informacoesServices';
+import { Informacoes, updateInformacoes,updateOrCreateInformacoes, getInformacoes, deleteInformacoes } from '../../../services/informacoesServices';
 
 import styles from './CadastrarInformacoes.module.css';
 
@@ -47,7 +47,7 @@ const CadastrarInformacoes: React.FC = () => {
     const onSubmit = async (values: Informacoes, { resetForm }: { resetForm: () => void }) => {
 
         try {
-            await updateInformacoes(values);
+            await updateOrCreateInformacoes(values);
             setInformacoes(values);
             console.log(values);
             alert('Formulário enviado com sucesso!');
