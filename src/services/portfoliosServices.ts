@@ -1,5 +1,4 @@
 import api from "./api";
-
 export interface Portfolios {
     id?:number;
     titulo: string;

@@ -35,7 +35,6 @@ const AppRoutes:React.FC = () => {
                 <Route path='portfolio/cadastro' element={<CadastrarPortfolio></CadastrarPortfolio>}></Route>
                 <Route path='portfolio/listagem' element={<PortfolioListagem></PortfolioListagem>}></Route>
             </Routes>
-
         </Layout>
     )
 }

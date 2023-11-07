@@ -12,8 +12,6 @@ import { Informacoes, updateInformacoes,updateOrCreateInformacoes, getInformacoe
 
 import styles from './CadastrarInformacoes.module.css';
 
-import fotos from '../../../assets/netbit2.png';
-
 const CadastrarInformacoes: React.FC = () => {
 
     const [informacoes, setInformacoes] = useState<Informacoes>({} as Informacoes);

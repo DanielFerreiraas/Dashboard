@@ -7,9 +7,6 @@ import { AppRoutes } from './Routes';
 
 import { AuthProvider } from './contexts/authContext';
 
-
-
-
 const App: React.FC = () => {
 
   return (
@@ -22,7 +19,6 @@ const App: React.FC = () => {
       </BrowserRouter>
     </AuthProvider>
   )
-
 }
 
 export default App;

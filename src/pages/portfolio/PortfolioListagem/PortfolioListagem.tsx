@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -11,7 +11,6 @@ import { Portfolios, deletePortfolio, getPortfolio } from '../../../services/por
 const PortfolioListagem: React.FC = () => {
 
     const navigate = useNavigate();
-
     const [portfolios, setPortfolios] = React.useState<Portfolios[]>([]);
 
     const fetchPortfolios = async () => {
